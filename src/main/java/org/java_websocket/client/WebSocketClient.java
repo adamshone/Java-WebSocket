@@ -238,7 +238,8 @@ public abstract class WebSocketClient extends WebSocketAdapter implements Runnab
 					// Hack for issue #140:
 					// Android does simply return form select without closing the channel if address is not reachable(which seems to be a bug in the android nio proivder)
 					// TODO provide a way to fix this problem which does not require this hack
-					throw new IOException( "Host is not reachable(Android Hack)" );
+					// TODO work out why this is breaking the connection in a Java program
+					//throw new IOException( "Host is not reachable(Android Hack)" );
 				}
 				while ( i.hasNext() ) {
 					key = i.next();
